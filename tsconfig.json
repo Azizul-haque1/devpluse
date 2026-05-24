@@ -7,10 +7,13 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
+    // "module": "nodenext",
     "module": "esnext",
+    "moduleResolution": "bundler",
+    // "moduleResolution": "node",
+
     "target": "esnext",
     "types": [],
-    "moduleResolution": "bundler",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -40,6 +43,7 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true
   }
 }

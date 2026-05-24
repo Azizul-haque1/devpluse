@@ -6,9 +6,11 @@ dotenv.config({ path: path.join(process.cwd(), ".env") });
 const config = {
   connection_string: process.env.CONNECTION_STRING as string,
   port: process.env.PORT,
-  secret: process.env.JWT_SECRET,
+  jwt_secret: process.env.JWT_SECRET,
   refresh_secret: process.env.JWT_REFRESH_SECRET,
   salt_round: process.env.SALT_ROUND,
+  secure: process.env.SECURE === "true",
+  sameSite: process.env.SAME_SITE as "lax" | "strict" | "none",
 };
 // console.log(config);
 
