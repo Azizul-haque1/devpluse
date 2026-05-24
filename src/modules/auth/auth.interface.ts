@@ -1,11 +1,19 @@
+export type TRole = "contributor" | "maintainer";
+
 export interface IUser {
   name: string;
   email: string;
   password: string;
-  role?: string;
+  role?: TRole;
 }
-
 export interface ILoginUser {
   email: string;
   password: string;
+}
+
+export interface IJwtPayload {
+  id: number;
+  name: string;
+  email: string;
+  role: TRole;
 }

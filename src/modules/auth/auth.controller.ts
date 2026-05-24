@@ -9,7 +9,7 @@ const createUser = async (req: Request, res: Response) => {
     sendResponse(res, {
       statusCode: 201,
       success: true,
-      message: "user created successfully",
+      message: "User registered successfully",
       data: result,
     });
   } catch (error: any) {
@@ -35,7 +35,7 @@ const loginUser = async (req: Request, res: Response) => {
     sendResponse(res, {
       statusCode: 200,
       success: true,
-      message: "User logged in successfully",
+      message: "Login successful",
       data: user,
     });
 
