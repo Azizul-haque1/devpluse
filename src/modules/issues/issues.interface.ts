@@ -14,4 +14,6 @@ export interface IIssue {
   type: TIssueType;
   status?: TIssueStatus;
   reporter_id?: number;
+  created_at?: Date;
+  updated_at?: Date;
 }
