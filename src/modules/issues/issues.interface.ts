@@ -1,0 +1,17 @@
+export type TIssueStatus = "open" | "in_progress" | "resolved";
+export type TIssueType = "bug" | "feature_request";
+
+export interface ICreateIssue {
+  title: string;
+  description: string;
+  type: TIssueType;
+}
+
+export interface IIssue {
+  id?: number;
+  title: string;
+  description: string;
+  type: TIssueType;
+  status?: TIssueStatus;
+  reporter_id?: number;
+}

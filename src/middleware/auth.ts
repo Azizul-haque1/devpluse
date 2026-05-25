@@ -1,13 +1,13 @@
 import type { NextFunction, Request, Response } from "express";
 import type { IJwtPayload, TRole } from "../modules/auth/auth.interface";
 import sendResponse from "../utility/sendResponse";
-import jwt from "jsonwebtoken";
+import jwt, { type JwtPayload } from "jsonwebtoken";
 import config from "../config";
 
 declare global {
   namespace Express {
     interface Request {
-      user?: IJwtPayload;
+      user?: JwtPayload;
     }
   }
 }
@@ -28,7 +28,8 @@ const auth = (...roles: TRole[]) => {
       }
 
       req.user = decoded;
-      console.log(req.user);
+      //   console.log(req.user);
+      next();
     } catch (error: any) {
       sendResponse(res, {
         statusCode: 500,
