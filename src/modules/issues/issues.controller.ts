@@ -2,6 +2,7 @@ import type { Request, Response } from "express";
 import { issuesService } from "./issues.service";
 import type { IJwtPayload, IUser } from "../auth/auth.interface";
 import sendResponse from "../../utility/sendResponse";
+import type { TIssueSort } from "./issues.interface";
 
 const createIssues = async (req: Request, res: Response) => {
   try {
@@ -26,8 +27,9 @@ const createIssues = async (req: Request, res: Response) => {
 };
 
 const getAllIssues = async (req: Request, res: Response) => {
+  const sort = (req.query.sort as TIssueSort) || "newest";
   try {
-    const result = await issuesService.getAllIssuesFromDB();
+    const result = await issuesService.getAllIssuesFromDB(sort);
     sendResponse(res, {
       statusCode: 200,
       success: true,

@@ -1,6 +1,6 @@
 import { pool } from "../../db";
 import type { IUser } from "../auth/auth.interface";
-import type { ICreateIssue, IIssue } from "./issues.interface";
+import type { ICreateIssue, IIssue, TIssueSort } from "./issues.interface";
 
 const createIssuesIntoDB = async (id: number, payload: ICreateIssue) => {
   const { title, description, type } = payload;
@@ -17,15 +17,22 @@ const createIssuesIntoDB = async (id: number, payload: ICreateIssue) => {
   return result.rows[0];
 };
 
-const getAllIssuesFromDB = async () => {
+const getAllIssuesFromDB = async (sort: TIssueSort = "newest") => {
+  let orderBy = "DESC";
+
+  if (sort === "oldest") {
+    orderBy = "ASC";
+  }
   const usersData = await pool.query(
     `
     SELECT * FROM users
     `
   );
   const users = usersData.rows;
+
   const query = `
   SELECT * FROM issues
+  ORDER BY created_at ${orderBy}
   `;
   const issuesData = await pool.query(query);
   const issues = issuesData.rows;

@@ -6,6 +6,7 @@ export interface ICreateIssue {
   description: string;
   type: TIssueType;
 }
+export type TIssueSort = "newest" | "oldest";
 
 export interface IIssue {
   id?: number;
