@@ -1,16 +1,9 @@
 import type { NextFunction, Request, Response } from "express";
 import type { IJwtPayload, TRole } from "../modules/auth/auth.interface";
 import sendResponse from "../utility/sendResponse";
-import jwt, { type JwtPayload } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import config from "../config";
 
-declare global {
-  namespace Express {
-    interface Request {
-      user?: JwtPayload;
-    }
-  }
-}
 const auth = (...roles: TRole[]) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
