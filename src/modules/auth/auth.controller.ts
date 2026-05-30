@@ -36,7 +36,7 @@ const loginUser = async (req: Request, res: Response) => {
       statusCode: 200,
       success: true,
       message: "Login successful",
-      data: user,
+      data: { token, user },
     });
 
     // console.log(result);

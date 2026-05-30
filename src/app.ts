@@ -6,6 +6,13 @@ const app: Application = express();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "DevPulse API is running",
+  });
+});
+
 app.use("/api/auth", authRouter);
 app.use("/api/issues", issuesRouter);
 
