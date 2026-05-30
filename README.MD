@@ -7,7 +7,7 @@ A collaborative backend platform for software teams to report bugs, suggest feat
 ## 🌐 Live URL
 
 ```bash
-https://your-live-link.com
+https://devpulse-six-beta.vercel.app
 ```
 
 ---
@@ -70,6 +70,7 @@ src
 ---
 
 # ⚙️ Setup Instructions
+
 ## 1️⃣ Clone Repository
 
 ```bash
@@ -115,9 +116,6 @@ npm run dev
 ---
 
 # 🗄️ Database Schema
-
-
-
 
 # 🔐 API Endpoints
 
