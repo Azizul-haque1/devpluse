@@ -15,7 +15,7 @@ https://devpulse-six-beta.vercel.app
 ## 📂 GitHub Repository
 
 ```bash
-https://github.com/yourusername/devpulse
+https://github.com/Azizul-haque1/devpluse
 ```
 
 ---
